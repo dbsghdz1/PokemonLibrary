@@ -7,3 +7,28 @@
 
 import Foundation
 
+struct PokemonData: Codable {
+  var results = [Name]()
+}
+
+struct Name: Codable {
+  var name = String()
+  var url = String()
+}
+
+struct PokemonInfo: Codable {
+  let order: String
+  let name: String
+  let height: Int
+  let weight: Int
+  let sprites: [Other]
+}
+
+struct Other: Codable {
+  let dream_world: [PokemonImage]
+}
+
+struct PokemonImage: Codable {
+  let front_default: String
+}
+
