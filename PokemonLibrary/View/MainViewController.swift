@@ -11,7 +11,7 @@ import SnapKit
 class MainViewController: UIViewController {
 
   let viewModel = MainViewModel()
-  var moveNextPage: ((UIImage?) -> Void)?
+  var moveNextPage: ((UIImage?, Int) -> Void)?
   var mainView = MainView(frame: .zero)
   
   override func loadView() {
@@ -50,8 +50,7 @@ extension MainViewController: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     if let cell = collectionView.cellForItem(at: indexPath) as? PokemonCell {
-      print(indexPath.row)
-      moveNextPage?(cell.imageView.image)
+      moveNextPage?(cell.imageView.image, (indexPath.row + 1))
     }
   }
 }

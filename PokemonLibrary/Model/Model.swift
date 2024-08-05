@@ -16,18 +16,17 @@ struct Name: Codable {
 }
 
 struct PokemonInfo: Codable {
-  let id: String
+  let id: Int
   let name: String
   let height: Int
   let weight: Int
-  let sprites: [Other]
+  let types: [PokemonType]
 }
 
-struct Other: Codable {
-  let dream_world: [PokemonImage]
+struct PokemonType: Codable {
+  let type: TypeName
 }
 
-struct PokemonImage: Codable {
-  let front_default: String
+struct TypeName: Codable {
+  let name: String
 }
-

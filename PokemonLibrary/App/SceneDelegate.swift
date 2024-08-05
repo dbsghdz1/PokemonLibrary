@@ -17,9 +17,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     
     let firstViewController = MainViewController()
-    firstViewController.moveNextPage = { image in
+    firstViewController.moveNextPage = { image, indexPath in
       let secondViewController = DetailViewController()
       secondViewController.receivedImage = image
+      secondViewController.receivedIndexPath = indexPath
       firstViewController.navigationController?.pushViewController(secondViewController, animated: true)
     }
     let navigationController = UINavigationController(rootViewController: firstViewController)
