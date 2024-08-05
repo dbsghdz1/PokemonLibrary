@@ -15,6 +15,8 @@
 		DD2C432A2C5F51E40023AAD2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2C43292C5F51E40023AAD2 /* NetworkManager.swift */; };
 		DD2C432E2C5F52460023AAD2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DD2C432D2C5F52460023AAD2 /* RxSwift */; };
 		DD2C43302C5F52900023AAD2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2C432F2C5F52900023AAD2 /* Model.swift */; };
+		DDBA8A132C5F744300577F91 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBA8A122C5F744300577F91 /* MainViewModel.swift */; };
+		DDBA8A1C2C6067B800577F91 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DDBA8A1B2C6067B800577F91 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,7 @@
 		DD2C431F2C5F50F50023AAD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD2C43292C5F51E40023AAD2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DD2C432F2C5F52900023AAD2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		DDBA8A122C5F744300577F91 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDBA8A1C2C6067B800577F91 /* Kingfisher in Frameworks */,
 				DD2C432E2C5F52460023AAD2 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +89,7 @@
 		DD2C43262C5F516B0023AAD2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DDBA8A122C5F744300577F91 /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			name = PokemonLibrary;
 			packageProductDependencies = (
 				DD2C432D2C5F52460023AAD2 /* RxSwift */,
+				DDBA8A1B2C6067B800577F91 /* Kingfisher */,
 			);
 			productName = PokemonLibrary;
 			productReference = DD2C43112C5F50F40023AAD2 /* PokemonLibrary.app */;
@@ -153,6 +159,7 @@
 			mainGroup = DD2C43082C5F50F40023AAD2;
 			packageReferences = (
 				DD2C432B2C5F523D0023AAD2 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				DDBA8A1A2C6067B800577F91 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = DD2C43122C5F50F40023AAD2 /* Products */;
 			projectDirPath = "";
@@ -185,6 +192,7 @@
 				DD2C43192C5F50F40023AAD2 /* ViewController.swift in Sources */,
 				DD2C43152C5F50F40023AAD2 /* AppDelegate.swift in Sources */,
 				DD2C43172C5F50F40023AAD2 /* SceneDelegate.swift in Sources */,
+				DDBA8A132C5F744300577F91 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +417,14 @@
 				minimumVersion = 6.7.1;
 			};
 		};
+		DDBA8A1A2C6067B800577F91 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -416,6 +432,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DD2C432B2C5F523D0023AAD2 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		DDBA8A1B2C6067B800577F91 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDBA8A1A2C6067B800577F91 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

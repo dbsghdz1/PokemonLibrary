@@ -9,11 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  let viewModel = MainViewModel()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
   }
-
-
 }
 

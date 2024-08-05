@@ -12,12 +12,11 @@ struct PokemonData: Codable {
 }
 
 struct Name: Codable {
-  var name = String()
-  var url = String()
+  var url: String?
 }
 
 struct PokemonInfo: Codable {
-  let order: String
+  let id: String
   let name: String
   let height: Int
   let weight: Int

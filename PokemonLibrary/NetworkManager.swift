@@ -16,7 +16,7 @@ enum NetworkError: Error {
 }
 
 class NetworkManager {
-  static let sahred = NetworkManager()
+  static let shared = NetworkManager()
   private init() {}
   
   func dataFetch<T: Decodable>(url: URL) -> Single<T> {
