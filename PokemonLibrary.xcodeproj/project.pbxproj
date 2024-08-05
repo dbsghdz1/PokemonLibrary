@@ -22,6 +22,7 @@
 		DDBA8A252C60722A00577F91 /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBA8A242C60722A00577F91 /* PokemonCell.swift */; };
 		DDBA8A272C60B9C600577F91 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBA8A262C60B9C600577F91 /* DetailViewController.swift */; };
 		DDBA8A292C60EA5E00577F91 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBA8A282C60EA5E00577F91 /* DetailViewModel.swift */; };
+		DDBA8A2B2C61366E00577F91 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBA8A2A2C61366E00577F91 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		DDBA8A242C60722A00577F91 /* PokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
 		DDBA8A262C60B9C600577F91 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DDBA8A282C60EA5E00577F91 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		DDBA8A2A2C61366E00577F91 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				DDBA8A1F2C6069ED00577F91 /* MainView.swift */,
 				DDBA8A242C60722A00577F91 /* PokemonCell.swift */,
 				DDBA8A262C60B9C600577F91 /* DetailViewController.swift */,
+				DDBA8A2A2C61366E00577F91 /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				DD2C432A2C5F51E40023AAD2 /* NetworkManager.swift in Sources */,
 				DDBA8A292C60EA5E00577F91 /* DetailViewModel.swift in Sources */,
 				DD2C43192C5F50F40023AAD2 /* MainViewController.swift in Sources */,
+				DDBA8A2B2C61366E00577F91 /* DetailView.swift in Sources */,
 				DD2C43152C5F50F40023AAD2 /* AppDelegate.swift in Sources */,
 				DD2C43172C5F50F40023AAD2 /* SceneDelegate.swift in Sources */,
 				DDBA8A252C60722A00577F91 /* PokemonCell.swift in Sources */,

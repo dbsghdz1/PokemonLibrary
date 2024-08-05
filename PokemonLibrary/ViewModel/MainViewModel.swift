@@ -12,10 +12,6 @@ import RxSwift
 
 class MainViewModel {
   
-  let POKEMON_URL = "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0"
-  let arr = BehaviorSubject(value: [Name]())
-  let disposeBag = DisposeBag()
-  
   func getPokemonUrl() -> Single<[String]> {
     guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0") else {
       return Single.error(NetworkError.invalidUrl)
