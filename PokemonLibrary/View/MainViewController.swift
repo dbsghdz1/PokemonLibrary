@@ -11,7 +11,8 @@ import SnapKit
 class MainViewController: UIViewController {
 
   let viewModel = MainViewModel()
-  var mainView: MainView!
+  var moveNextPage: ((UIImage?) -> Void)?
+  var mainView = MainView(frame: .zero)
   
   override func loadView() {
     mainView = MainView(frame: UIScreen.main.bounds)
@@ -42,11 +43,19 @@ extension MainViewController: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PokemonCell.identifier, for: indexPath) as? PokemonCell else { return UICollectionViewCell() }
-
+    
     cell.configureCell(url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(indexPath.row + 1).png")
     return cell
   }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    if let cell = collectionView.cellForItem(at: indexPath) as? PokemonCell {
+      print(indexPath.row)
+      moveNextPage?(cell.imageView.image)
+    }
+  }
 }
+  
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
