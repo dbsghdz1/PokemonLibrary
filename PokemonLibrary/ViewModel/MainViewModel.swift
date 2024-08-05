@@ -6,8 +6,8 @@
 //
 // Observavle의 생명주기
 // create -> Subscribe(실행) -> onNext -> onCompleted or Error -> Disposed .debug() 활용
- 
-import Foundation
+
+import UIKit
 import RxSwift
 
 class MainViewModel {

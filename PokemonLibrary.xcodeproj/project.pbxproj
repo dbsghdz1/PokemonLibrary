@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		DD2C43152C5F50F40023AAD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2C43142C5F50F40023AAD2 /* AppDelegate.swift */; };
 		DD2C43172C5F50F40023AAD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2C43162C5F50F40023AAD2 /* SceneDelegate.swift */; };
-		DD2C43192C5F50F40023AAD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2C43182C5F50F40023AAD2 /* ViewController.swift */; };
+		DD2C43192C5F50F40023AAD2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2C43182C5F50F40023AAD2 /* MainViewController.swift */; };
 		DD2C431B2C5F50F50023AAD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD2C431A2C5F50F50023AAD2 /* Assets.xcassets */; };
 		DD2C431E2C5F50F50023AAD2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DD2C431D2C5F50F50023AAD2 /* Base */; };
 		DD2C432A2C5F51E40023AAD2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2C43292C5F51E40023AAD2 /* NetworkManager.swift */; };
@@ -17,19 +17,24 @@
 		DD2C43302C5F52900023AAD2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2C432F2C5F52900023AAD2 /* Model.swift */; };
 		DDBA8A132C5F744300577F91 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBA8A122C5F744300577F91 /* MainViewModel.swift */; };
 		DDBA8A1C2C6067B800577F91 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DDBA8A1B2C6067B800577F91 /* Kingfisher */; };
+		DDBA8A202C6069ED00577F91 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBA8A1F2C6069ED00577F91 /* MainView.swift */; };
+		DDBA8A232C606AB100577F91 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DDBA8A222C606AB100577F91 /* SnapKit */; };
+		DDBA8A252C60722A00577F91 /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBA8A242C60722A00577F91 /* PokemonCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DD2C43112C5F50F40023AAD2 /* PokemonLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2C43142C5F50F40023AAD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD2C43162C5F50F40023AAD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DD2C43182C5F50F40023AAD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD2C43182C5F50F40023AAD2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DD2C431A2C5F50F50023AAD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD2C431D2C5F50F50023AAD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD2C431F2C5F50F50023AAD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD2C43292C5F51E40023AAD2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DD2C432F2C5F52900023AAD2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		DDBA8A122C5F744300577F91 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		DDBA8A1F2C6069ED00577F91 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		DDBA8A242C60722A00577F91 /* PokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDBA8A232C606AB100577F91 /* SnapKit in Frameworks */,
 				DDBA8A1C2C6067B800577F91 /* Kingfisher in Frameworks */,
 				DD2C432E2C5F52460023AAD2 /* RxSwift in Frameworks */,
 			);
@@ -69,11 +75,9 @@
 				DD2C43272C5F51850023AAD2 /* View */,
 				DD2C43262C5F516B0023AAD2 /* ViewModel */,
 				DD2C43252C5F51650023AAD2 /* Model */,
-				DD2C431A2C5F50F50023AAD2 /* Assets.xcassets */,
-				DD2C43162C5F50F40023AAD2 /* SceneDelegate.swift */,
-				DD2C43142C5F50F40023AAD2 /* AppDelegate.swift */,
-				DD2C431C2C5F50F50023AAD2 /* LaunchScreen.storyboard */,
+				DDBA8A1D2C60696E00577F91 /* Asset */,
 				DD2C431F2C5F50F50023AAD2 /* Info.plist */,
+				DDBA8A1E2C60698B00577F91 /* App */,
 			);
 			path = PokemonLibrary;
 			sourceTree = "<group>";
@@ -97,7 +101,9 @@
 		DD2C43272C5F51850023AAD2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DD2C43182C5F50F40023AAD2 /* ViewController.swift */,
+				DD2C43182C5F50F40023AAD2 /* MainViewController.swift */,
+				DDBA8A1F2C6069ED00577F91 /* MainView.swift */,
+				DDBA8A242C60722A00577F91 /* PokemonCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -107,6 +113,24 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDBA8A1D2C60696E00577F91 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				DD2C431C2C5F50F50023AAD2 /* LaunchScreen.storyboard */,
+				DD2C431A2C5F50F50023AAD2 /* Assets.xcassets */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		DDBA8A1E2C60698B00577F91 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DD2C43142C5F50F40023AAD2 /* AppDelegate.swift */,
+				DD2C43162C5F50F40023AAD2 /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +152,7 @@
 			packageProductDependencies = (
 				DD2C432D2C5F52460023AAD2 /* RxSwift */,
 				DDBA8A1B2C6067B800577F91 /* Kingfisher */,
+				DDBA8A222C606AB100577F91 /* SnapKit */,
 			);
 			productName = PokemonLibrary;
 			productReference = DD2C43112C5F50F40023AAD2 /* PokemonLibrary.app */;
@@ -160,6 +185,7 @@
 			packageReferences = (
 				DD2C432B2C5F523D0023AAD2 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				DDBA8A1A2C6067B800577F91 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				DDBA8A212C606AB100577F91 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = DD2C43122C5F50F40023AAD2 /* Products */;
 			projectDirPath = "";
@@ -189,9 +215,11 @@
 			files = (
 				DD2C43302C5F52900023AAD2 /* Model.swift in Sources */,
 				DD2C432A2C5F51E40023AAD2 /* NetworkManager.swift in Sources */,
-				DD2C43192C5F50F40023AAD2 /* ViewController.swift in Sources */,
+				DD2C43192C5F50F40023AAD2 /* MainViewController.swift in Sources */,
 				DD2C43152C5F50F40023AAD2 /* AppDelegate.swift in Sources */,
 				DD2C43172C5F50F40023AAD2 /* SceneDelegate.swift in Sources */,
+				DDBA8A252C60722A00577F91 /* PokemonCell.swift in Sources */,
+				DDBA8A202C6069ED00577F91 /* MainView.swift in Sources */,
 				DDBA8A132C5F744300577F91 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +453,14 @@
 				minimumVersion = 7.12.0;
 			};
 		};
+		DDBA8A212C606AB100577F91 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -437,6 +473,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DDBA8A1A2C6067B800577F91 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		DDBA8A222C606AB100577F91 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDBA8A212C606AB100577F91 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
