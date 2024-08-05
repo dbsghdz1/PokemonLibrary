@@ -13,7 +13,7 @@ import SnapKit
 class PokemonCell: UICollectionViewCell {
   static let identifier = "pokemonCell"
   
-  private lazy var imageView: UIImageView = {
+  lazy var imageView: UIImageView = {
     let imageView = UIImageView()
     return imageView
   }()
