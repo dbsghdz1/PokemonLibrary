@@ -37,12 +37,4 @@ class DetailViewController: UIViewController {
       }).disposed(by: disposeBag)
     viewModel.getPokemonData(url: "https://pokeapi.co/api/v2/pokemon/\(receivedIndexPath ?? 1)/")
   }
-  
-  func updateUI(with pokemon: PokemonInfo) {
-    
-    print("Pokemon Name: \(pokemon.name)")
-    print("Pokemon Height: \(pokemon.height)")
-    print("Pokemon Weight: \(pokemon.weight)")
-    print("Pokemon Types: \(pokemon.types.map { $0.type.name }.joined(separator: ", "))")
-  }
 }

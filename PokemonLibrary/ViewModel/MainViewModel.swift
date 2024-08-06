@@ -13,14 +13,14 @@ import RxSwift
 class MainViewModel {
   
   func getPokemonUrl() -> Single<[String]> {
-    guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0") else {
+    guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon?limit=1302&offset=0") else {
       return Single.error(NetworkError.invalidUrl)
     }
     
     return NetworkManager.shared.dataFetch(url: url)
       .flatMap { (response: PokemonData) -> Single<[String]> in
-        let pokemonUrl = response.results.compactMap { $0.url }
-        return Single.just(pokemonUrl)
+        let urls = response.results.compactMap { $0.url }
+        return Single.just(urls)
       }
   }
 }

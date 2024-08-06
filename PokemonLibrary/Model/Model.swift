@@ -8,11 +8,12 @@
 import Foundation
 
 struct PokemonData: Codable {
-  var results = [Name]()
+  let results: [Pokemon]
 }
 
-struct Name: Codable {
-  var url: String?
+struct Pokemon: Codable {
+  let url: String
+  //let next: String
 }
 
 struct PokemonInfo: Codable {
