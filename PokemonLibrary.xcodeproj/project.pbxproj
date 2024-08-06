@@ -23,6 +23,7 @@
 		DDBA8A272C60B9C600577F91 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBA8A262C60B9C600577F91 /* DetailViewController.swift */; };
 		DDBA8A292C60EA5E00577F91 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBA8A282C60EA5E00577F91 /* DetailViewModel.swift */; };
 		DDBA8A2B2C61366E00577F91 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBA8A2A2C61366E00577F91 /* DetailView.swift */; };
+		DDBA8A2D2C61D50C00577F91 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBA8A2C2C61D50C00577F91 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		DDBA8A262C60B9C600577F91 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DDBA8A282C60EA5E00577F91 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		DDBA8A2A2C61366E00577F91 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		DDBA8A2C2C61D50C00577F91 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		DDBA8A1D2C60696E00577F91 /* Asset */ = {
 			isa = PBXGroup;
 			children = (
+				DDBA8A2C2C61D50C00577F91 /* UIColor+Extension.swift */,
 				DD2C431C2C5F50F50023AAD2 /* LaunchScreen.storyboard */,
 				DD2C431A2C5F50F50023AAD2 /* Assets.xcassets */,
 			);
@@ -225,6 +228,7 @@
 				DDBA8A272C60B9C600577F91 /* DetailViewController.swift in Sources */,
 				DD2C43302C5F52900023AAD2 /* Model.swift in Sources */,
 				DD2C432A2C5F51E40023AAD2 /* NetworkManager.swift in Sources */,
+				DDBA8A2D2C61D50C00577F91 /* UIColor+Extension.swift in Sources */,
 				DDBA8A292C60EA5E00577F91 /* DetailViewModel.swift in Sources */,
 				DD2C43192C5F50F40023AAD2 /* MainViewController.swift in Sources */,
 				DDBA8A2B2C61366E00577F91 /* DetailView.swift in Sources */,

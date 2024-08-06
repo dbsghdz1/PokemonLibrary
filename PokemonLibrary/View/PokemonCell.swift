@@ -30,11 +30,17 @@ class PokemonCell: UICollectionViewCell {
     self.layer.cornerRadius = 10
   }
   
+  override func prepareForReuse() {
+     super.prepareForReuse()
+    imageView.image = nil
+  }
+  
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func configureCell(url: String) {
+  func configureCell(id: Int) {
+    let url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(id).png"
     guard let imageUrl = URL(string: url) else { return }
     imageView.kf.setImage(with: imageUrl)
   }
