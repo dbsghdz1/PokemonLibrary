@@ -24,6 +24,9 @@
 		DDBA8A292C60EA5E00577F91 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBA8A282C60EA5E00577F91 /* DetailViewModel.swift */; };
 		DDBA8A2B2C61366E00577F91 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBA8A2A2C61366E00577F91 /* DetailView.swift */; };
 		DDBA8A2D2C61D50C00577F91 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBA8A2C2C61D50C00577F91 /* UIColor+Extension.swift */; };
+		DDBA8A2F2C634BA500577F91 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DDBA8A2E2C634BA500577F91 /* RxCocoa */; };
+		DDBA8A312C634BAA00577F91 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = DDBA8A302C634BAA00577F91 /* RxRelay */; };
+		DDBA8A382C63DF4700577F91 /* PokemonTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBA8A372C63DF4700577F91 /* PokemonTranslator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,7 @@
 		DDBA8A282C60EA5E00577F91 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		DDBA8A2A2C61366E00577F91 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		DDBA8A2C2C61D50C00577F91 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		DDBA8A372C63DF4700577F91 /* PokemonTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTranslator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,8 +54,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDBA8A312C634BAA00577F91 /* RxRelay in Frameworks */,
 				DDBA8A232C606AB100577F91 /* SnapKit in Frameworks */,
 				DDBA8A1C2C6067B800577F91 /* Kingfisher in Frameworks */,
+				DDBA8A2F2C634BA500577F91 /* RxCocoa in Frameworks */,
 				DD2C432E2C5F52460023AAD2 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				DD2C432F2C5F52900023AAD2 /* Model.swift */,
+				DDBA8A372C63DF4700577F91 /* PokemonTranslator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +172,8 @@
 				DD2C432D2C5F52460023AAD2 /* RxSwift */,
 				DDBA8A1B2C6067B800577F91 /* Kingfisher */,
 				DDBA8A222C606AB100577F91 /* SnapKit */,
+				DDBA8A2E2C634BA500577F91 /* RxCocoa */,
+				DDBA8A302C634BAA00577F91 /* RxRelay */,
 			);
 			productName = PokemonLibrary;
 			productReference = DD2C43112C5F50F40023AAD2 /* PokemonLibrary.app */;
@@ -231,6 +240,7 @@
 				DDBA8A2D2C61D50C00577F91 /* UIColor+Extension.swift in Sources */,
 				DDBA8A292C60EA5E00577F91 /* DetailViewModel.swift in Sources */,
 				DD2C43192C5F50F40023AAD2 /* MainViewController.swift in Sources */,
+				DDBA8A382C63DF4700577F91 /* PokemonTranslator.swift in Sources */,
 				DDBA8A2B2C61366E00577F91 /* DetailView.swift in Sources */,
 				DD2C43152C5F50F40023AAD2 /* AppDelegate.swift in Sources */,
 				DD2C43172C5F50F40023AAD2 /* SceneDelegate.swift in Sources */,
@@ -494,6 +504,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DDBA8A212C606AB100577F91 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		DDBA8A2E2C634BA500577F91 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD2C432B2C5F523D0023AAD2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		DDBA8A302C634BAA00577F91 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD2C432B2C5F523D0023AAD2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

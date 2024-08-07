@@ -9,11 +9,11 @@ import Foundation
 
 struct PokemonData: Codable {
   let results: [Pokemon]
+  let next: String?
 }
 
 struct Pokemon: Codable {
   let url: String
-  //let next: String
 }
 
 struct PokemonInfo: Codable {

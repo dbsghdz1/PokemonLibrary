@@ -18,10 +18,13 @@ class MainView: UIView {
   }()
   
   lazy var collectionView: UICollectionView = {
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    collectionView.backgroundColor = .darkRed
-    return collectionView
-  }()
+      let layout = UICollectionViewFlowLayout()
+      layout.minimumLineSpacing = 10.0
+      layout.minimumInteritemSpacing = 10.0
+      let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+      collectionView.backgroundColor = .darkRed
+      return collectionView
+    }()
   
   override init(frame: CGRect) {
     super.init(frame: frame)

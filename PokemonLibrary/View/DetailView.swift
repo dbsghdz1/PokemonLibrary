@@ -119,9 +119,13 @@ class DetailView: UIView {
   func updateUI(with pokemon: PokemonInfo, id: Int?, image: UIImage?) {
     pokemonImage.image = image
     pokemonId.text = "No. \(id ?? 0)"
-    pokemonName.text = "\(pokemon.name)"
+    pokemonName.text = "\(PokemonTranslator.getKoreanName(for: pokemon.name))"
     pokemonHeight.text = "키: \(String(pokemon.height)) m"
     pokemonWeight.text = "몸무게: \(String(pokemon.weight)) kg"
-    pokemonType.text = "타입: " + pokemon.types.map { $0.type.name }.joined()
+    
+    let pokemonTypeNames = pokemon.types.map { $0.type.name }
+    let pokemonTypeDisplayNames = pokemonTypeNames.compactMap { PokemonTypeName.type(rawValue: $0)?.displayName }
+    pokemonType.text = "타입: " + pokemonTypeDisplayNames.joined(separator: ", ")
+
   }
 }
