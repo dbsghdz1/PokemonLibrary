@@ -5,25 +5,34 @@
 //  Created by 김윤홍 on 8/5/24.
 //
 
-import Foundation
+import UIKit
+
 import RxSwift
+import RxCocoa
 
 class DetailViewModel {
   
-  let pokemonInfo = BehaviorSubject<PokemonInfo?>(value: nil)
+  private let pokemonId: Int
+  
+  init(pokemonId: Int) {
+    self.pokemonId = pokemonId
+  }
+  
+  private let pokemonInfoRelay = BehaviorRelay<PokemonInfo?>(value: nil)
+  var pokemonInfo: Driver<PokemonInfo?> {
+    return pokemonInfoRelay.asDriver()
+  }
+
   private let disposeBag = DisposeBag()
   
-  func getPokemonData(url: String) {
-    guard let pokemonUrl = URL(string: url) else {
-      pokemonInfo.onError(NetworkError.invalidUrl)
+  func getPokemonData() {
+    guard let pokemonUrl = URL(string: "https://pokeapi.co/api/v2/pokemon/\(pokemonId)/") else {
       return
     }
     
     NetworkManager.shared.dataFetch(url: pokemonUrl)
       .subscribe(onSuccess: { [weak self] (pokemon: PokemonInfo) in
-        self?.pokemonInfo.onNext(pokemon)
-      }, onFailure: { [weak self] error in
-        self?.pokemonInfo.onError(error)
+        self?.pokemonInfoRelay.accept(pokemon)
       }).disposed(by: disposeBag)
   }
 }

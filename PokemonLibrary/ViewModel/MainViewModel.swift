@@ -10,53 +10,59 @@
 import UIKit
 
 import RxSwift
+import RxCocoa
 
-class MainViewModel {
+protocol ViewModelType {
+  associatedtype Input
+  associatedtype Output
   
-  init() {
-    getPokemonId(pokemonUrl: apiUrl)
+  func transform(input: Input) -> Output
+}
+
+final class MainViewModel: ViewModelType {
+  
+  struct Input {
+    var isScrolled: Observable<Void>
   }
   
-  var apiUrl = "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0"
-  let nextPage = BehaviorSubject(value: [Int]())
-  let ids = BehaviorSubject(value: [Int]())
-  let disposeBag = DisposeBag()
+  struct Output {
+    var pokemonIds: Driver<[Int]>
+  }
   
-  func getPokemonId(pokemonUrl: String) {
+  private let apiUrl = BehaviorRelay(value: "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0")
+  let ids = BehaviorRelay(value: [Int]())
+  private let disposeBag = DisposeBag()
+  
+  func transform(input: Input) -> Output {
+    let pokemonIds = BehaviorRelay(value: ids.value)
+    input.isScrolled
+      .flatMapLatest { [weak self] _ -> Single<[Int]> in
+        guard let self = self else { return .just([]) }
+        return self.getPokemonId(pokemonUrl: self.apiUrl.value)
+      }
+      .subscribe(onNext: { [weak self] newIds in
+        guard let self = self else { return }
+        let updatedIds = self.ids.value + newIds
+        self.ids.accept(updatedIds)
+        pokemonIds.accept(updatedIds)
+      }).disposed(by: disposeBag)
+    
+    return Output(pokemonIds: pokemonIds.asDriver(onErrorJustReturn: []))
+  }
+  
+  private func getPokemonId(pokemonUrl: String) -> Single<[Int]> {
     guard let url = URL(string: pokemonUrl) else {
-      ids.onError(NetworkError.invalidUrl)
-      return
+      return Single.error(NetworkError.invalidUrl)
     }
     
-    NetworkManager.shared.dataFetch(url: url)
-      .subscribe(onSuccess: { [weak self] (pokemon: PokemonData) in
+    return NetworkManager.shared.dataFetch(url: url)
+      .map { (pokemon: PokemonData) -> [Int] in
         let pokemonResults = pokemon.results
         let pokemonIds = pokemonResults.compactMap { pokemon -> Int? in
           return Int(pokemon.url.split(separator: "/").last ?? "")
         }
-        
-        do {
-          var currentValue = try! self?.ids.value()
-          currentValue?.append(contentsOf: pokemonIds)
-          self?.ids.onNext(currentValue ?? [])
-        }
-      }, onFailure: { [weak self] error in
-        self?.ids.onError(error)
-      }).disposed(by: disposeBag)
-  }
-  
-  func getNextPokemon(pokemonUrl: String) {
-    guard let url = URL(string: apiUrl) else {
-      nextPage.onError(NetworkError.invalidUrl)
-      return
-    }
-    
-    NetworkManager.shared.dataFetch(url: url)
-      .subscribe(onSuccess: { [weak self] (pokemon: PokemonData) in
-        self?.apiUrl = pokemon.next ?? ""
-        self?.getPokemonId(pokemonUrl: pokemon.next ?? "")
-      }, onFailure: { error in
-        print(error)
-      }).disposed(by: disposeBag)
+        self.apiUrl.accept(pokemon.next ?? "")
+        return pokemonIds
+      }
   }
 }

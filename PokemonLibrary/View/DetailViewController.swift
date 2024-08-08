@@ -13,28 +13,29 @@ class DetailViewController: UIViewController {
   
   var receivedImage: UIImage?
   var receivedIndexPath: Int?
-  let viewModel = DetailViewModel()
-  var detailView = DetailView(frame: .zero)
+  private var viewModel: DetailViewModel!
+  private var detailView = DetailView(frame: .zero)
   private let disposeBag = DisposeBag()
   
   override func loadView() {
     detailView = DetailView(frame: UIScreen.main.bounds)
     self.view = detailView
   }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    guard let pokemonId = receivedIndexPath else { return }
+    viewModel = DetailViewModel(pokemonId: pokemonId)
+    viewModel.getPokemonData()
     bind()
   }
   
-  func bind() {
+  private func bind() {
     viewModel.pokemonInfo
-      .observe(on: MainScheduler.instance)
-      .subscribe(onNext: { [weak self] pokemon in
+      .drive(onNext: { [weak self] pokemon in
         guard let pokemon = pokemon else { return }
         self?.detailView.updateUI(with: pokemon, id: self?.receivedIndexPath, image: self?.receivedImage)
-      }, onError: { error in
-        print(error)
       }).disposed(by: disposeBag)
-    viewModel.getPokemonData(url: "https://pokeapi.co/api/v2/pokemon/\(receivedIndexPath ?? 1)/")
   }
 }

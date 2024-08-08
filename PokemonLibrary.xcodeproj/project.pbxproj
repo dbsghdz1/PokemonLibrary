@@ -85,7 +85,7 @@
 		DD2C43132C5F50F40023AAD2 /* PokemonLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				DD2C43292C5F51E40023AAD2 /* NetworkManager.swift */,
+				DDBA8A5C2C65126B00577F91 /* Utils */,
 				DDBA8A1E2C60698B00577F91 /* App */,
 				DD2C43272C5F51850023AAD2 /* View */,
 				DD2C43262C5F516B0023AAD2 /* ViewModel */,
@@ -150,6 +150,14 @@
 				DD2C43162C5F50F40023AAD2 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		DDBA8A5C2C65126B00577F91 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DD2C43292C5F51E40023AAD2 /* NetworkManager.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
